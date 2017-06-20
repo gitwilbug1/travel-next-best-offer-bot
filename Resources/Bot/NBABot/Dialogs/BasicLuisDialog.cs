@@ -52,7 +52,7 @@ namespace NBABot.Dialogs
             await interact(context, result, "You can get detailed information about this hotel here: http://fabrikam.com/hotelinfo");
         }
 
-        [LuisIntent("get ground transporation")]
+        [LuisIntent("get info about ground transporation")]
         public async Task GetLoanInfoIntent(IDialogContext context, LuisResult result)
         {
             await interact(context, result, "You can get details about ground transporation here: http://fabrikam.com/groundtransprotation");

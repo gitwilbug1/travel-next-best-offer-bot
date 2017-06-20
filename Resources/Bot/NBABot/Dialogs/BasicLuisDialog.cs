@@ -17,8 +17,9 @@ namespace NBABot.Dialogs
     [Serializable]
     public class BasicLuisDialog : LuisDialog<object>
     {
-        private const string offer1 = "Would you like to sign up for a premium 5 star hotel package?";
-        private const string offer2 = "Would you like to sign up for premium access to our hotel reviews?";
+        private const string offer1 = "Would you like to upgrade your hotel reservation to a Premium 5 star hotel?";
+        private const string offer2 = "Would you like to add a rental car reservation to your itinerary?";
+
 
         // Replace this with the Logic App Request URL.
         private static string logicAppURL = ConfigurationManager.AppSettings["LogicAppUrl"];
@@ -45,16 +46,16 @@ namespace NBABot.Dialogs
             await interact(context, result, "Your itinerary is here: http://fabrikam.com/itinerary");
         }
 
-        [LuisIntent("get info about hotels")]
+        [LuisIntent("get info about a hotel")]
         public async Task GetCCInfoIntent(IDialogContext context, LuisResult result)
         {
-            await interact(context, result, "You will find detailed information about hotels here: http://fabrikam.com/ccinfo");
+            await interact(context, result, "You can get detailed information about this hotel here: http://fabrikam.com/hotelinfo");
         }
 
-        [LuisIntent("get a hotel review")]
+        [LuisIntent("get ground transporation")]
         public async Task GetLoanInfoIntent(IDialogContext context, LuisResult result)
         {
-            await interact(context, result, "You will find detailed review info here: http://fabrikam.com/loaninfo");
+            await interact(context, result, "You can get details about ground transporation here: http://fabrikam.com/groundtransprotation");
         }
 
         private async Task interact(IDialogContext context, LuisResult result, string message)
